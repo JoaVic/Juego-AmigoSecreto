@@ -14,7 +14,7 @@ function agregarAmigo(){
     //limpiamos campo
     id.value = "";
     //Se muestra en la consola que si guarda nombres ingresados
-    console.log(amigos);
+    //console.log(amigos);
 
     mostrarLista();
 }
@@ -30,3 +30,17 @@ function mostrarLista(){
         lista.appendChild(li);
 }
 }
+ function sortearAmigo(){
+    if(amigos.length === 0){
+ alert("No hay amigos en la lista para sortear");
+ return;
+    }
+    //Generar un indice aleatorio
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    //Nombre sorteado
+    let amigoSeleccionado = amigos[indiceAleatorio];
+    document.getElementById("resultado").textContent = "El amigo secreto es: " + amigoSeleccionado;
+}
+
+/**let resultado = document.getElementById("resultado");
+resultado.innerHTML = `<li>El amigo secreto es: ${amigoSeleccionado}</li>`;**/
